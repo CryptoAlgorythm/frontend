@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { reducer } from './reducers';
-import sagaMiddlewareFactory from 'redux-saga';
+import { watcherSaga } from './sagas';
 
 // create saga middleware
 const sagaMiddleware = createSagaMiddleware();

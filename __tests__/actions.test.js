@@ -1,5 +1,5 @@
-import * as types from '../constants/ActionTypes';
-import * as actions from '../actions';
+import * as types from '../src/constants/ActionTypes';
+import * as actions from '../src/actions';
 
 describe('actions', () => {
     const payload = 'data.txt'
