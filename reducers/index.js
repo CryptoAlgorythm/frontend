@@ -10,6 +10,13 @@ const initialState = {
 
 export function reducer(state = initialState, { type, payload }) {
     switch (type) {
+        case actions.API_CALL_REQUEST:
+            return {
+                ...state,
+                fetching: true,
+                error: null
+            }
+            break;
         default:
             return state;
     }
