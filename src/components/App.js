@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { render } from 'react-dom';
 import { apiCallRequest } from '../actions';
+import Table from './Table';
 
 class App extends Component {
     state = {
@@ -30,35 +31,16 @@ class App extends Component {
 
                 {
                     wordFrequency &&
-                    <div className="table-responsive">
-                        <table className="table table-striped table-bordered">
-                            <thead className="thead-dark">
-                                <tr>
-                                    <th>Word</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {Object.keys(wordFrequency).map((word) => {
-                                    return (
-                                        <tr key={wordFrequency[word].name}>
-                                            <td>{wordFrequency[word].name}</td><td>{wordFrequency[word].total}</td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
-                        {
-                            error &&
-                            <p style={{ color: "red" }}>Uh oh - something went wrong!</p>
-                        }
-                    </div>
+                    <Table wordFrequency={wordFrequency} />
+                }
+                {
+                    error &&
+                    <p style={{ color: "red" }}>Uh oh - something went wrong!</p>
                 }
             </div>
         )
     }
 }
-
 
 const mapStateToProps = state => {
     return {
