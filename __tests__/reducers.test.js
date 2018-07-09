@@ -22,4 +22,16 @@ describe('Reducers', () => {
                 payload: 'data.txt'
             })).toEqual(requestAction)
     })
+    it('should handle API_CALL_FAILURE', () => {
+        const failedAction = {
+            fetching: false,
+            error: true,
+            wordFrequency: {}
+        }
+
+        expect(reducer(undefined,
+            {
+                type: actions.API_CALL_FAILURE,
+            })).toEqual(failedAction)
+    })
 })

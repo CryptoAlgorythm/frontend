@@ -26,6 +26,13 @@ export function reducer(state = initialState, { type, payload }) {
                 wordFrequency: payload
             }
             break;
+        case actions.API_CALL_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                error: true,
+            }
+            break;
         default:
             return state;
     }
