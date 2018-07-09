@@ -5,11 +5,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { reducer } from './reducers';
-import { watcherSaga } from './sagas'
 import sagaMiddlewareFactory from 'redux-saga';
 
 // create saga middleware
-const createSagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 // dev tools middlware
 const reduxDevTools =
