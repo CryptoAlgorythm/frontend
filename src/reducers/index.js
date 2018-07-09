@@ -5,7 +5,8 @@ import * as actions from '../constants/ActionTypes';
 const initialState = {
     fetching: false,
     error: null,
-    wordFrequency: {}
+    wordFrequency: {},
+    total: 0
 }
 
 export function reducer(state = initialState, { type, payload }) {
@@ -22,7 +23,8 @@ export function reducer(state = initialState, { type, payload }) {
                 ...state,
                 fetching: false,
                 error: null,
-                wordFrequency: payload
+                wordFrequency: payload.counts,
+                total: payload.total
             }
             break;
         case actions.API_CALL_FAILURE:

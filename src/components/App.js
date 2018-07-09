@@ -17,8 +17,7 @@ class App extends Component {
 
     render() {
         const { selectedFile } = this.state;
-        const { fetching, error, fileUploadHandler, wordFrequency } = this.props;
-
+        const { fetching, error, fileUploadHandler, wordFrequency, total } = this.props;
         return (
             <div className="App" className="container">
                 <div className="jumbotron">
@@ -31,7 +30,7 @@ class App extends Component {
 
                 {
                     wordFrequency &&
-                    <Table wordFrequency={wordFrequency} />
+                    <Table wordFrequency={wordFrequency} total={total} />
                 }
                 {
                     error &&
@@ -46,7 +45,8 @@ const mapStateToProps = state => {
     return {
         fetching: state.fetching,
         error: state.error,
-        wordFrequency: state.wordFrequency
+        wordFrequency: state.wordFrequency,
+        total: state.total
     }
 };
 
