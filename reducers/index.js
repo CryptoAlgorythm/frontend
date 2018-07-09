@@ -17,6 +17,15 @@ export function reducer(state = initialState, { type, payload }) {
                 error: null
             }
             break;
+        case actions.API_CALL_SUCCESS:
+            console.log(payload)
+            return {
+                ...state,
+                fetching: false,
+                error: null,
+                wordFrequency: payload
+            }
+            break;
         default:
             return state;
     }
