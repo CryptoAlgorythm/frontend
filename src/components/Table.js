@@ -4,7 +4,8 @@ const Table = ({ wordFrequency }) => {
     const result = Object.keys(wordFrequency).map((word) => {
         return (
             <tr key={wordFrequency[word].name}>
-                <td>{wordFrequency[word].name}</td><td>{wordFrequency[word].total}</td>
+                <td>{wordFrequency[word].name}</td>
+                <td>{wordFrequency[word].total}</td>
             </tr>
         )
     });
