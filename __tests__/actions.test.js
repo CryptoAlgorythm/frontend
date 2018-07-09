@@ -8,8 +8,9 @@ describe('actions', () => {
             type: types.API_CALL_REQUEST,
             payload: payload
         }
-        expect(actions.apiCallRequest(payload)).toEqual(expectedAction)
+        expect(actions.apiCallRequest(payload)).toEqual(expectedAction);
     });
+
     it('should indicate successful upload', () => {
         // const payload = 'data.txt'
         const payload = {
@@ -28,6 +29,14 @@ describe('actions', () => {
             type: types.API_CALL_SUCCESS,
             payload: payload
         }
-        expect(actions.apiCallSuccess(payload)).toEqual(expectedAction)
-    })
-})
+        expect(actions.apiCallSuccess(payload)).toEqual(expectedAction);
+    });
+
+    it('should return an error that the upload was unsuccessful', () => {
+        // const payload = 'data.txt'
+        const expectedAction = {
+            type: types.API_CALL_FAILURE,
+        }
+        expect(actions.apiCallFailure()).toEqual(expectedAction);
+    });
+});
