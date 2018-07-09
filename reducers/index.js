@@ -18,7 +18,6 @@ export function reducer(state = initialState, { type, payload }) {
             }
             break;
         case actions.API_CALL_SUCCESS:
-            console.log(payload)
             return {
                 ...state,
                 fetching: false,
