@@ -7,6 +7,7 @@ class App extends Component {
         return (
             <div>
                 <input type="file" />
+                <button> Upload</button>
             </div>
         )
     }
