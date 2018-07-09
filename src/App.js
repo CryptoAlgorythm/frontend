@@ -5,7 +5,9 @@ import { render } from 'react-dom';
 class App extends Component {
     render() {
         return (
-            <h1>Hello WOrld</h1>
+            <div>
+                <input type="file" />
+            </div>
         )
     }
 }

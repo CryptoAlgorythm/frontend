@@ -1,8 +1,20 @@
 import React from 'react';
-import App from '../src/App'
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux'
+import App from '../src/App';
 
 describe('App', () => {
+    const state = {
+        selectedfile: ''
+    }
     let wrapper, store, container
+
+    const mockStore = configureStore();
+
+    beforeEach(() => {
+        store = mockStore(state);
+        wrapper = mount(<Provider store={store}><App /></Provider>);
+    });
 
     it('App renders without crashing', () => {
         let wrapper = shallow(<App />);
