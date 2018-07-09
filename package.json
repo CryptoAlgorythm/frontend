@@ -1,0 +1,31 @@
+{
+  "name": "openlaw-frontend",
+  "version": "1.0.0",
+  "description": "front-end application to upload file and get back word count",
+  "main": "index.js",
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CryptoAlgorythm/openlaw-frontend.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "javascript",
+    "es6",
+    "word-count"
+  ],
+  "author": "Lateema Spencer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CryptoAlgorythm/openlaw-frontend/issues"
+  },
+  "homepage": "https://github.com/CryptoAlgorythm/openlaw-frontend#readme"
+}
