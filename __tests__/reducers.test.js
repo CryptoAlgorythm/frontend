@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes';
+import * as types from '../src/constants/ActionTypes';
 import { reducer } from '../src/reducers';
 
 describe('Reducers', () => {
@@ -6,32 +6,41 @@ describe('Reducers', () => {
         const initialState = {
             fetching: false,
             error: null,
-            wordFrequency: {}
+            wordFrequency: {},
+            total: 0
         }
         expect(reducer(undefined, {})).toEqual(initialState);
     })
     it('should handle API_CALL_SUCCESS', () => {
-        const wordFrequency = {
-            0: { name: "hello", total: 3 },
-            1: { name: "there", total: 1 },
-            2: { name: "is", total: 1 },
-            3: { name: "no", total: 1 },
-            4: { name: "better", total: 1 },
-            5: { name: "way", total: 1 },
-            6: { name: "to", total: 1 },
-            7: { name: "say", total: 1 },
-            8: { name: "hello!", total: 1 },
-            9: { name: "", total: 1 }
+        const payload = {
+            counts:
+                {
+                    hello: 4,
+                    there: 1,
+                    'is\'nt': 1,
+                    any: 1,
+                    better: 1,
+                    way: 1,
+                    to: 1,
+                    say: 1,
+                    'that\'s': 1,
+                    amazing: 1,
+                    'one-two': 1,
+                    '2-1': 1
+                },
+            total: 15
         }
+
         const successAction = {
             fetching: false,
             error: null,
-            wordFrequency: wordFrequency
+            wordFrequency: payload.counts,
+            total: payload.total
         }
         expect(reducer(undefined,
             {
                 type: types.API_CALL_SUCCESS,
-                payload: wordFrequency
+                payload: payload
             })).toEqual(successAction);
     });
 
@@ -39,7 +48,8 @@ describe('Reducers', () => {
         const requestAction = {
             fetching: true,
             error: null,
-            wordFrequency: {}
+            wordFrequency: {},
+            total: 0
         }
         expect(reducer(undefined,
             {
@@ -52,7 +62,8 @@ describe('Reducers', () => {
         const failedAction = {
             fetching: false,
             error: true,
-            wordFrequency: {}
+            wordFrequency: {},
+            total: 0
         }
 
         expect(reducer(undefined,
