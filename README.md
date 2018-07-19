@@ -14,4 +14,4 @@ You should now have a node server running on port 3000
 
 Now return back to the openlaw-frontend folder and run npm start and you should now have a running application to upload a file
 
-I have included a test file in the https://github.com/CryptoAlgorythm/backend/public directory for you to upload into the application
+I have included a test file in the https://github.com/CryptoAlgorythm/frontend/public directory for you to upload into the application
